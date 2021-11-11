@@ -1,0 +1,7 @@
+{
+  "name": "smartticket",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      E-Ticket
+    </ion-title>
+
+    <ion-buttons slot="primary">
+      <ion-button color="secondary" routerLink="/auth">
+        <ion-icon slot="icon-only" name="log-in-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+   
+  <div class="bg">
+    <h3></h3>
+    
+    <ion-list lines="nones">
+      <ion-list-header lines="inset">
+        <ion-label>Nos trajet</ion-label>
+      </ion-list-header>
+
+      <ion-item *ngFor="let l of lines">
+        <div class="line" [routerLink]="'/trips/'+l.line">
+          {{l.line}}
+  
+        </div>
+      </ion-item>
+    </ion-list>
+
+  </div>
+</ion-content>
